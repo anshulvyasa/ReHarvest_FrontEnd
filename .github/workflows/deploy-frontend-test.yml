@@ -1,0 +1,69 @@
+name: Deploying Frontend to stagging
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  DOCKER_IMAGE_NAME: reharvest
+  EC2_USERNAME: ubuntu
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: setup docker buildX
+        uses: actions/setup-buildx-action@v2
+
+      - name: login in to dockerhub
+        uses: docker/login-action@v2
+        with:
+          username: ${{secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: building docker image
+        uses: docker/build-push-action@v2
+        with:
+          file: .
+          push: true
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ env.EC2_USERNAME }}
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            # Stop and Remove the existing container
+            echo "Stopping Existing Container"
+            sudo docker stop ${{ env.DOCKER_IMAGE_NAME }} || true
+            sudo docker rm ${{ env.DOCKER_IMAGE_NAME }}   || true
+
+            # remove the old image
+            echo "Removing old Image"
+            sudo docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest || true
+
+            # pull new image
+            echo "Pulling new Image"
+            sudo docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest 
+
+            # run new Container 
+            echo "Starting New Conatiner"
+            sudo docker run -d \
+            --name ${{ env.DOCKER_IMAGE_NAME }} \
+            -p 3000:3000 \
+            --restart unless-stopped \
+            ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest
+
+
+            # Verify Deployment
+            echo "verifying deployment..."
+            sudo docker ps
+
+
+            echo "Deployment Successful"
