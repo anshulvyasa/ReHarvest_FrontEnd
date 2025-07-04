@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Reharvest",
   description: "AI for Sustainable Supply Chain",
   other: {
-    "google-site-verification": "EYviaahP6-PaQKwcQlVGz5p6sUsSExayTOVjw4PqiII",
+    "google-site-verification": "VjX3wG2qgzzNn2HNjoiQR4HbSTDAgaIx3r0CXhMe5j4",
   },
 };
 
