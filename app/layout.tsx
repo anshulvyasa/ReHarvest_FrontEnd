@@ -14,17 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Reharvest",
-  description: "AI for Sustananle Supply Chain",
-};
-
-export const googleMetadata:Metadata = {
-  title: "Reharvest",
-  description: "Your app description",
+  description: "AI for Sustainable Supply Chain",
   other: {
-    "google-site-verification": "EYviaahP6-PaQKwcQlVGz5p6sUsSExayTOVjw4PqiII"
-  }
+    "google-site-verification": "EYviaahP6-PaQKwcQlVGz5p6sUsSExayTOVjw4PqiII",
+  },
 };
-
 
 export default function RootLayout({
   children,
