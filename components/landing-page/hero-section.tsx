@@ -1,6 +1,6 @@
-import { ArrowDown, ArrowRight, Heart, Recycle } from "lucide-react";
+import { ArrowDown, Recycle } from "lucide-react";
 import BackGroundEffect from "./background-effect";
-import { Button } from "../ui/button";
+import HeroSectionButtton from "./hero-section-button";
 
 const HeroSection = () => {
   return (
@@ -33,14 +33,7 @@ const HeroSection = () => {
 
         {/* Part 4  Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-          <Button size="lg" className="group btn-primary text-lg px-8 py-4">
-            <span className="flex items-center">Start Donating</span>
-            <ArrowRight className="inline-block ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-          <Button size="lg" className="group btn-secondary text-lg px-8 py-4">
-            Learn More
-            <Heart className="inline-block ml-2 h-5 w-5 group-hover:text-secondary-400 transition-colors" />
-          </Button>
+          <HeroSectionButtton />
         </div>
 
         {/* Part 5  */}

@@ -9,6 +9,9 @@ COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 
 COPY . .
+COPY .env ./.env
+
+RUN pnpm dlx prisma generate
 RUN pnpm run build
 
 # Stage 2: Run the app
@@ -25,7 +28,6 @@ COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 
-
 EXPOSE 3000
 
-CMD ["pnpm", "start"]
+ENTRYPOINT ["pnpm", "start"]
