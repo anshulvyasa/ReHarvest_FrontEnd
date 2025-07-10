@@ -56,6 +56,7 @@ jobs:
 
             echo "Starting new container..."
             sudo docker run -d \
+              -p 3000:3000 \
               --name ${{ env.DOCKER_IMAGE_NAME }} \
               -e AUTH_SECRET=${{ secrets.AUTH_SECRET }} \
               -e AUTH_GOOGLE_ID=${{ secrets.AUTH_GOOGLE_ID }} \
@@ -66,7 +67,6 @@ jobs:
               -e RESEND_API_KEY=${{ secrets.RESEND_API_KEY }} \
               -e NODE_ENV=${{ secrets.NODE_ENV }} \
               -e DATABASE_URL=${{ secrets.DATABASE_URL }} \
-              -p 3000:3000 \
               --restart unless-stopped \
               ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest
 
