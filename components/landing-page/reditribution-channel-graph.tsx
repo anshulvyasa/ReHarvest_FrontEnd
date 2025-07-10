@@ -32,7 +32,7 @@ interface ActiveShapeProps extends SectorProps {
   value?: number;
 }
 
-const COLORS = ["#94C9A8", "#69B578", "#4A8C66", "#7DBB97"];
+const COLORS = ["#83C29A", "#55AD8A", "#5DA474", "#3E7766"];
 
 // Desktop active shape with external labels
 const renderActiveShape = ({

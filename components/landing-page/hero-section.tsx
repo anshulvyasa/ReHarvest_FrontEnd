@@ -1,10 +1,13 @@
 import { ArrowDown, Leaf, Recycle, Zap } from "lucide-react";
 import Typewriter from "./typewriter";
 import HeroSectionButtton from "./hero-section-button";
+import BackGroundEffect from "./background-effect";
 
 const HeroSection = () => {
   return (
     <section className="sm:min-h-screen overflow-y-auto overflow-x-hidden bg-gradient-to-br from-[#C5EAC5] via-[#EBF6EB] to-[#C5EAC5] relative pb-20">
+      <BackGroundEffect/>
+
       <div className="container-max mx-auto ">
         <h2 className="flex justify-center items-center space-x-2 pt-10">
           <div className="h-6 w-6 sm:h-11 sm:w-11">
