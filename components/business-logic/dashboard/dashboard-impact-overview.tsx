@@ -6,18 +6,19 @@ import Image from "next/image";
 import React from "react";
 import WeeklyImpactChart from "./weekly-impact-chart";
 import { motion } from "framer-motion";
+import RealTimeCountUp from "@/components/general/realtime-count-up";
 
 const DashboardImpactOverview = () => {
   return (
     <section className="mb-30">
-      <h1 className="text-[#1E4A2A] font-[700] text-xl sm:text-[23px] sm:text-2xl md:text-3xl ">
+      <h1 className="text-[#1E4A2A] font-[700] text-[23px]  sm:text-[26px] md:text-3xl ">
         Impact Overview
       </h1>
       <p className="text-[#22782A] text-[16px] sm:text-lg font-[400]">
         Your contribution to a sustainable future
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-7 max-w-[90%] mb-12">
+      <div className="grid grid-cols-1 postm-1_5:grid-cols-2 lg:grid-cols-4 gap-6 mt-7 max-w-[90%] mb-12">
         {impactOverviewSustanabilityData.map((option) => (
           <div
             key={option.id}
@@ -44,7 +45,7 @@ const DashboardImpactOverview = () => {
                 initial="hidden"
                 animate="visible"
               >
-                {option.amount}
+                <RealTimeCountUp val={option.amount} duration={option.duration} />
                 <span className="text-[#428C47] font-[600] text-sm">
                   {option.label}
                 </span>

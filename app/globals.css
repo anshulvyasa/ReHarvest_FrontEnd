@@ -6,6 +6,7 @@
 @theme inline {
   --breakpoint-postm-1: 350px;
   --breakpoint-postm-2: 483px;
+  --breakpoint-postm-1_5: 370px;
 }
 
 @theme inline {

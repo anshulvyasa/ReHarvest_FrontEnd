@@ -4,6 +4,7 @@ import Image from "next/image";
 import NextMileStoneSection from "./next-milestone-section";
 import { recentActivity } from "@/config";
 import RecentActivity from "./recent-activity";
+import RealTimeCountUp from "@/components/general/realtime-count-up";
 
 const GreenPointWallet = () => {
   return (
@@ -21,7 +22,7 @@ const GreenPointWallet = () => {
       {/* Part 2 here we get the data as User Innteracts  */}
       <div className="px-3 rounded-xl flex flex-col  bg-[#ECFCED] w-full text-center py-3">
         <span className="text-[#1E4A2A] font-[700] text-[32px] sm:text-[38px]">
-          2,450
+          <RealTimeCountUp val={2450} duration={1} /> 
         </span>
         <span className="text-[#428C47] text-[16px] sm:text-[18px] font-[500] -mt-1">
           Total GreenPoints

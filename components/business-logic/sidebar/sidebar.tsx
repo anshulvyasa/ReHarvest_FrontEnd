@@ -39,7 +39,7 @@ const SideBar = ({ isOpen, setIsOpen }: SideBarProps) => {
         {isOpen && (
           <>
             <div
-              className="w-10 h-10 absolute text-[#468168] right-0 top-7 flex items-center justify-center cursor-pointer z-50"
+              className="w-10 h-10 absolute md:hidden text-[#468168] right-0 top-7 flex items-center justify-center cursor-pointer z-50"
               onClick={() => setIsOpen(false)}
             >
               <BiChevronsLeft className="h-6 w-6" />
