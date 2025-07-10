@@ -1,5 +1,5 @@
 import { clients, trustedPartnerFooter } from "@/config";
-import RealTimeCountUp from "./realtime-count-up";
+import RealTimeCountUp from "../general/realtime-count-up";
 
 const TrustedPartner = () => {
   const repetedClient = [...clients, ...clients];
@@ -40,7 +40,7 @@ const TrustedPartner = () => {
             >
               <div className="text-center">
                 <div className="text-[#468168] font-[600] text-[40px]">
-                  <RealTimeCountUp val={content.amount} />
+                  <RealTimeCountUp val={content.amount} duration={2}/>
                   <span>{content.label}</span>
                 </div>
                 <h2 className="text-[#22782A] font-[400] text-[24px]">

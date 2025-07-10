@@ -48,7 +48,7 @@ const HeroSection = () => {
             <div className="h-full mx-4 border-x border-2 !border-[#908C8C]" />
             <div className="flex items-center justify-center gap-2 font-medium text-[26px]">
               <Leaf className="h-6 w-6 text-[#328C48]" />
-              <span className="text-[#328C48]">Zero waste</span>
+              <span className="text-[#328C48]">AI Powered</span>
             </div>
             <div className="h-full mx-4 border-x border-2 !border-[#908C8C]" />
             <div className="flex items-center justify-center gap-2 font-medium text-[26px]">

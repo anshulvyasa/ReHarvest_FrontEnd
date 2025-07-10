@@ -10,10 +10,10 @@ import { motion } from "framer-motion";
 const DashboardImpactOverview = () => {
   return (
     <section className="mb-30">
-      <h1 className="text-[#1E4A2A] font-[700] text-xl sm:text-2xl md:text-3xl ">
+      <h1 className="text-[#1E4A2A] font-[700] text-xl sm:text-[23px] sm:text-2xl md:text-3xl ">
         Impact Overview
       </h1>
-      <p className="text-[#22782A] text-lg font-[400]">
+      <p className="text-[#22782A] text-[16px] sm:text-lg font-[400]">
         Your contribution to a sustainable future
       </p>
 

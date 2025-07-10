@@ -12,25 +12,25 @@ export const howItWorks = [
     number: "01",
     title: "AI Detection",
     description:
-      "Computer vision analyzes produce quality, categorizes imperfections and determines optimal use in real-time",
+      "Analyzes produce quality in real-time, detecting flaws and ensuring accurate grading instantly.",
   },
   {
     icon: FiTarget,
     number: "02",
     iconbg: "#CDF4CA",
     iconcolor: "#00B219",
-    title: "Redirect to Use",
+    title: "Redirect Use",
     description:
-      "Computer vision analyzes produce quality, categorizes imperfections and determines optimal use in real-time",
+      "Suggests the best usage based on quality, helping reduce waste and improve resource flow.",
   },
   {
     icon: ChartLine,
     number: "03",
     iconbg: "#F3E9CC",
     iconcolor: "#D4A53E",
-    title: "Track carbon & impact",
+    title: "Track Impact",
     description:
-      "Computer vision analyzes produce quality, categorizes imperfections and determines optimal use in real-time",
+      "Monitors carbon savings and tracks environmental benefits without adding layout strain.",
   },
 ];
 
@@ -40,7 +40,8 @@ export const realTimeDashboardCard = [
     iconcolor: "#388E3C",
     performanceIcon: "/performanelan.png",
     performanceLabel: "+1.2%",
-    title: 152450,
+    title: 145623,
+    duration: 2,
     titleLabel: "Kg",
     footer: "CO2 Saved",
   },
@@ -50,6 +51,7 @@ export const realTimeDashboardCard = [
     performanceIcon: "/performanelan.png",
     performanceLabel: "+1.2%",
     title: 2450,
+    duration: 5,
     titleLabel: "tons",
     footer: "Tons Rescued",
   },
@@ -58,7 +60,8 @@ export const realTimeDashboardCard = [
     iconcolor: "#FFEB3B",
     performanceIcon: "/performanelan.png",
     performanceLabel: "+1.2%",
-    title: 152450,
+    title: 55245,
+    duration: 2,
     titleLabel: "pts",
     footer: "GreenPoints",
   },
@@ -68,6 +71,7 @@ export const realTimeDashboardCard = [
     performanceIcon: "/performanelan.png",
     performanceLabel: "+1.2%",
     title: 152,
+    duration: 5,
     titleLabel: "",
     footer: "Active Partners",
   },
@@ -242,6 +246,7 @@ export const impactOverviewSustanabilityData = [
     percentage: "+1.2%",
     iconSrc: "/leaf.png",
     amount: "2,450",
+    duration: 3,
     label: "Kg",
     footer: "CO₂ Saved",
     iconbg: "#E4F5E5",
@@ -251,6 +256,7 @@ export const impactOverviewSustanabilityData = [
     percentage: "+1.2%",
     iconSrc: "/recycle.png",
     amount: "1,203",
+    duration: 3,
     label: "Pts",
     footer: "Food rescued",
     iconbg: "#D4E3FE",
@@ -260,6 +266,7 @@ export const impactOverviewSustanabilityData = [
     percentage: "+1.2%",
     iconSrc: "/points.png",
     amount: "42,450",
+    duration: 2,
     label: "Kg",
     footer: "GreenPoints",
     iconbg: "#F6ECCF",
@@ -269,6 +276,7 @@ export const impactOverviewSustanabilityData = [
     percentage: "+1.2%",
     iconSrc: "/delete.png",
     amount: "1,240",
+    duration: 3,
     label: "Kg",
     footer: "Waste produced",
     iconbg: "#FACCC4",
@@ -283,6 +291,171 @@ export const dashboardBarChartData = [
   { day: "Fri", value: 270 },
   { day: "Sat", value: 320 },
   { day: "Sun", value: 70 },
+];
+
+export const recentActivity = [
+  {
+    id: 1,
+    type: "Points from Survey Completion",
+    time: "2 hours ago",
+    points: 120,
+    symbol: "+",
+  },
+  {
+    id: 2,
+    type: "Bonus for Daily Login",
+    time: "3 hours ago",
+    points: 50,
+    symbol: "+",
+  },
+  {
+    id: 3,
+    type: "Points from Product Review",
+    time: "5 hours ago",
+    points: 80,
+    symbol: "+",
+  },
+  {
+    id: 4,
+    type: "Points from Referral",
+    time: "10 hours ago",
+    points: 200,
+    symbol: "+",
+  },
+  {
+    id: 5,
+    type: "Points from Quiz",
+    time: "Yesterday",
+    points: 75,
+    symbol: "+",
+  },
+  {
+    id: 6,
+    type: "Points from Community Engagement",
+    time: "Yesterday",
+    points: 40,
+    symbol: "+",
+  },
+  {
+    id: 7,
+    type: "Points redeemed for Gift Card",
+    time: "2 days ago",
+    points: 500,
+    symbol: "-",
+  },
+  {
+    id: 8,
+    type: "Points from Weekly Challenge",
+    time: "3 days ago",
+    points: 150,
+    symbol: "+",
+  },
+  {
+    id: 9,
+    type: "Points from Profile Completion",
+    time: "4 days ago",
+    points: 100,
+    symbol: "+",
+  },
+  {
+    id: 10,
+    type: "Points from Video Watch",
+    time: "5 days ago",
+    points: 25,
+    symbol: "+",
+  },
+  {
+    id: 11,
+    type: "Correction: Duplicate Entry Removed",
+    time: "1 week ago",
+    points: 60,
+    symbol: "-",
+  },
+  {
+    id: 12,
+    type: "Points from App Usage",
+    time: "1 week ago",
+    points: 30,
+    symbol: "+",
+  },
+  {
+    id: 13,
+    type: "Points from Daily Streak",
+    time: "1 week ago",
+    points: 20,
+    symbol: "+",
+  },
+  {
+    id: 14,
+    type: "Points from First Purchase",
+    time: "2 weeks ago",
+    points: 250,
+    symbol: "+",
+  },
+  {
+    id: 15,
+    type: "Points from Tutorial Completion",
+    time: "3 weeks ago",
+    points: 90,
+    symbol: "+",
+  },
+];
+
+export const achievementsCard = [
+  {
+    id: 1,
+    iconUrl: "/tree.png",
+    title: "Eco Warrior",
+    description: "Saved 10 tons of CO2",
+  },
+  {
+    id: 2,
+    iconUrl: "/wideRecycle.png",
+    title: "Waste Reducer",
+    description: "Saved 10 tons of CO2",
+  },
+];
+
+export const achievementsFooter = [
+  {
+    id: 1,
+    iconUrl: "/heartA.png",
+    title: "Community Hero",
+    description: "Save 100 tons of CO2",
+  },
+  {
+    id: 2,
+    iconUrl: "/heartB.png",
+    title: "Community Hero",
+    description: "Save 100 tons of CO2",
+  },
+];
+
+export const redeemRewardsData = [
+  {
+    id: 1,
+    title: "Redeem Rewards",
+    points: 1000,
+    status: "claimed",
+  },
+  {
+    id: 2,
+    title: "Redeem Rewards",
+    points: 1000,
+    status: "claimed",
+  },
+  {
+    id: 3,
+    title: "Redeem Rewards",
+    points: 1000,
+    status: "redeemable",
+  },
+  {
+    id: 4,
+    title: "Redeem Rewards",
+    points: 1000,
+    status: "locked",
+  },
 ];
 
 export const containerVariants: Variants = {

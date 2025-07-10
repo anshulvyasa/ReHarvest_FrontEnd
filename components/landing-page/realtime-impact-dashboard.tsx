@@ -1,7 +1,7 @@
 import { realTimeDashboardCard } from "@/config";
 import { Card } from "../ui/card";
 import Image from "next/image";
-import RealTimeCountUp from "./realtime-count-up";
+import RealTimeCountUp from "../general/realtime-count-up";
 import Bargraph from "./bargraph";
 import RedistributionChannel from "./reditribution-channel-graph";
 
@@ -21,7 +21,7 @@ const RealTimeImpactDashboard = () => {
         </div>
 
         {/* part 2  */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4 mb-20">
           {realTimeDashboardCard.map((content, index) => (
             <Card
               className="border-none px-6 py-6 shadow-lg rounded-3xl bg-white hover:scale-105 transition-all duration-300"
@@ -47,7 +47,7 @@ const RealTimeImpactDashboard = () => {
                 </div>
               </div>
               <div className="flex space-x-1 items-center text-[#000000] font-[700] text-[24px]">
-                <RealTimeCountUp val={content.title} />
+                <RealTimeCountUp val={content.title} duration={content.duration} />
                 <span className="text-[#909090] font-[600] text-[18px]">
                   {content.titleLabel}
                 </span>

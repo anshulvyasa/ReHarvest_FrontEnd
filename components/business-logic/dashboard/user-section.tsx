@@ -4,9 +4,9 @@ import ReedemRewards from "./reedem-rewards-points";
 
 const UserSection = () => {
   return (
-    <section className="h-screen grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <section className="min-h-screen py-5 grid grid-cols-1 lg:grid-cols-2 gap-10">
       <GreenPointWallet />
-      <div className="flex flex-col justify-between">
+      <div className="flex flex-col gap-10 justify-between">
         <Achievements />
         <ReedemRewards />
       </div>

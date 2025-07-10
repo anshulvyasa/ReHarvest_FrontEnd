@@ -15,7 +15,7 @@ const HowItWorksTiltedCard = () => {
             showTooltip={false}
             displayOverlayContent={true}
             overlayContent={
-              <div className="px-6 pt-3 pb-6">
+              <div className="px-6 pt-3 pb-4">
                 <div className="flex justify-between">
                   <div
                     className="h-13 w-13 rounded-2xl px-1 flex items-center justify-center"
@@ -33,7 +33,7 @@ const HowItWorksTiltedCard = () => {
                 <div className="text-[#000000] font-[600] text-[24px] mt-2">
                   {content.title}
                 </div>
-                <p className="font-[400] text-[16px] text-[#8E8A8A] font-sans">
+                <p className="font-[400] text-[18px] text-[#8E8A8A] font-sans">
                   {content.description}
                 </p>
               </div>

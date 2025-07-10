@@ -155,7 +155,7 @@
 }
 
 body {
-  background-color: var(--color-surface-primary);
+  background-color: #fff;
   color: var(--color-text-primary);
   font-feature-settings: "rlig" 1, "calt" 1;
 }
@@ -200,6 +200,16 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-neutral-500);
+}
+
+/* Custom Scrollbar for dashboard  */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .btn-primary {
