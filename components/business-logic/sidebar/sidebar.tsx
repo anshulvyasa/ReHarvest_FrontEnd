@@ -29,7 +29,11 @@ const SideBar = ({ isOpen, setIsOpen }: SideBarProps) => {
       <aside
         className={cn(
           "fixed group top-0 left-0 h-screen bg-[#E4F5E5] flex flex-col z-40 transition-all duration-300 ease-in-out overflow-hidden",
-          isMobile && isOpen ? "w-full" : isOpen ? "w-[280px]" : "w-0"
+          isOpen
+            ? isMobile
+              ? "w-full opacity-100 pointer-events-auto"
+              : "w-[280px] opacity-100 pointer-events-auto"
+            : "w-0 opacity-0 pointer-events-none"
         )}
       >
         {isOpen && (

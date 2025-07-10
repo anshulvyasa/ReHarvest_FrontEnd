@@ -125,16 +125,16 @@ export const navbarLink = [
 export const trustedPartnerFooter = [
   {
     amount: 50,
-    label:"+",
+    label: "+",
     title: "Active Partner",
   },
   {
-    amount:500,
+    amount: 500,
     label: "K+",
     title: "Active Member",
   },
   {
-    amount:15,
+    amount: 15,
     label: "M+",
     title: "Users",
   },
@@ -220,16 +220,19 @@ export const sidebarFooterContent = [
     id: "myprofile",
     title: "My Profile",
     src: "/sidebarmyprofile.png",
+    action: "",
   },
   {
     id: "logout",
     title: "Log Out",
     src: "/sidebarlogout.png",
+    action: "logout",
   },
   {
     id: "setting",
     title: "Settings",
     src: "/sidebarsetting.png",
+    action: "",
   },
 ];
 
