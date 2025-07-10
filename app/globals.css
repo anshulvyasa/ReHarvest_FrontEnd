@@ -4,6 +4,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --breakpoint-postm-1: 350px;
+  --breakpoint-postm-2: 483px;
+}
+
+@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -164,6 +169,21 @@ body {
   }
 }
 
+@layer components {
+  .animate-slide-left {
+    animation: slideLeft 30s linear infinite;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Custom Scrollbar  */
 ::-webkit-scrollbar {
   width: 8px;
@@ -309,7 +329,11 @@ body {
 }
 
 .text-gradient-primary {
-  background: linear-gradient(to right, var(--color-primary-400), var(--color-secondary-400));
+  background: linear-gradient(
+    to right,
+    var(--color-primary-400),
+    var(--color-secondary-400)
+  );
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

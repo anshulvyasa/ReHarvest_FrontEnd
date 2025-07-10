@@ -14,14 +14,18 @@ import SignInCardFooter from "@/components/authentication/signIn/signin-card-foo
 import SignInHeader from "@/components/authentication/signIn/signin-header";
 import SignInCredentials from "@/components/authentication/signIn/sign-credentials";
 import { useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function SignInPage() {
-  const session = useSession();
+  const { status } = useSession();
+  const router = useRouter();
 
-  if (session.status === "authenticated") {
-    redirect("/");
-  }
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.push("/app/dashboard");
+    }
+  }, [status, router]);
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-200 px-4 py-8 sm:px-6 lg:px-8">
       {" "}

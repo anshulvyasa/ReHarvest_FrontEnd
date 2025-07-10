@@ -5,11 +5,15 @@ RUN corepack enable
 
 WORKDIR /app
 
+ARG NEXT_PUBLIC_HOSTING_DOMIAN
+ARG NEXT_PUBLIC_AUTH_URL
+
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 
 COPY . .
-COPY .env ./.env
+RUN echo "NEXT_PUBLIC_HOSTING_DOMAIN=${NEXT_PUBLIC_HOSTING_DOMAIN}" >./.env
+RUN echo "NEXT_PUBLIC_AUTH_URL=${NEXT_PUBLIC_AUTH_URL}" >>./.env
 
 RUN pnpm dlx prisma generate
 RUN pnpm run build

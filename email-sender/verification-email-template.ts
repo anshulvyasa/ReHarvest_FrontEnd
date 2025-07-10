@@ -1,5 +1,5 @@
 export const verifyEmailTemplate = (token: string) => {
-  const verificationLink = `${process.env.HOSTING_DOMIAN}/verify-email?token=${token}`;
+  const verificationLink = `${process.env.NEXT_PUBLIC_HOSTING_DOMIAN}/verify-email?token=${token}`;
 
   return `
     <div style="font-family: 'Segoe UI', sans-serif; padding: 30px; background: #f7fdfb;">

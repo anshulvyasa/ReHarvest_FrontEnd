@@ -1,47 +1,142 @@
 import { Variants } from "framer-motion";
-import { Heart, Leaf, Recycle, ShoppingCart, Wrench } from "lucide-react";
+import { Brain, ChartLine, Leaf, Recycle, Star, Users } from "lucide-react";
 import { CiMail } from "react-icons/ci";
-import { FiUser } from "react-icons/fi";
+import { FiTarget, FiUser } from "react-icons/fi";
 import { IoLockClosedOutline } from "react-icons/io5";
 
-export const edible_section = [
+export const howItWorks = [
   {
-    heading: "Resell at Discount",
-    description: "Safe, edible items sold in imperfect product sections",
-    Icon: Recycle,
+    icon: Brain,
+    iconbg: "#E1EBFF",
+    iconcolor: "#1242B5",
+    number: "01",
+    title: "AI Detection",
+    description:
+      "Computer vision analyzes produce quality, categorizes imperfections and determines optimal use in real-time",
   },
   {
-    heading: "Donate to Communities",
-    description: "Food banks, NGOs, and community kitchens receive donations",
-    Icon: Heart,
+    icon: FiTarget,
+    number: "02",
+    iconbg: "#CDF4CA",
+    iconcolor: "#00B219",
+    title: "Redirect to Use",
+    description:
+      "Computer vision analyzes produce quality, categorizes imperfections and determines optimal use in real-time",
   },
   {
-    heading: "Upcycle Into New Products",
-    description: "Transform into innovative food products",
-    Icon: Wrench,
-  },
-  {
-    heading: "Convert to Compost",
-    description: "Spoiled items become nutrient-rich soil amendments",
-    Icon: Leaf,
+    icon: ChartLine,
+    number: "03",
+    iconbg: "#F3E9CC",
+    iconcolor: "#D4A53E",
+    title: "Track carbon & impact",
+    description:
+      "Computer vision analyzes produce quality, categorizes imperfections and determines optimal use in real-time",
   },
 ];
 
-export const non_edible_section = [
+export const realTimeDashboardCard = [
   {
-    heading: "Refurbish & Resell",
-    description: "Repairable items become certified second-hand products",
-    Icon: Wrench,
+    icon: Leaf,
+    iconcolor: "#388E3C",
+    performanceIcon: "/performanelan.png",
+    performanceLabel: "+1.2%",
+    title: 152450,
+    titleLabel: "Kg",
+    footer: "CO2 Saved",
   },
   {
-    heading: "Salvage Components",
-    description: "Extract and reuse valuable parts from damaged items",
-    Icon: ShoppingCart,
+    icon: Recycle,
+    iconcolor: "#4CAF50",
+    performanceIcon: "/performanelan.png",
+    performanceLabel: "+1.2%",
+    title: 2450,
+    titleLabel: "tons",
+    footer: "Tons Rescued",
   },
   {
-    heading: "Responsible Recycling",
-    description: "Unusable items processed through proper recycling channels",
-    Icon: Recycle,
+    icon: Star,
+    iconcolor: "#FFEB3B",
+    performanceIcon: "/performanelan.png",
+    performanceLabel: "+1.2%",
+    title: 152450,
+    titleLabel: "pts",
+    footer: "GreenPoints",
+  },
+  {
+    icon: Users,
+    iconcolor: "#2196F3",
+    performanceIcon: "/performanelan.png",
+    performanceLabel: "+1.2%",
+    title: 152,
+    titleLabel: "",
+    footer: "Active Partners",
+  },
+];
+
+export const landingpageBarGraph = [
+  { name: "Jan", impact: 63 },
+  { name: "Feb", impact: 37 },
+  { name: "Mar", impact: 18 },
+  { name: "Apr", impact: 31 },
+  { name: "May", impact: 85 },
+];
+
+export const landingpagePieChartData = [
+  { name: "Retailer", value: 166.7 },
+  { name: "Agencies", value: 169.71 },
+  { name: "Kitchen", value: 177.95 },
+  { name: "NGOs", value: 106.39 },
+];
+
+export const clients = [
+  "TechCorp",
+  "InnovateLab",
+  "DataFlow",
+  "CloudSync",
+  "DevTools",
+  "SmartWork",
+  "NextGen",
+  "CodeBase",
+  "WorkFlow",
+  "TeamSync",
+  "ProActive",
+  "DigitalEdge",
+];
+
+export const navbarLink = [
+  {
+    href: "#",
+    title: "About",
+  },
+  {
+    href: "#",
+    title: "Contact",
+  },
+  {
+    href: "#",
+    title: "ESG Report",
+  },
+  {
+    href: "#",
+    title: "Sustainability Goals",
+  },
+];
+
+export const trustedPartnerFooter = [
+  {
+    amount: 50,
+    label:"+",
+    title: "Active Partner",
+  },
+  {
+    amount:500,
+    label: "K+",
+    title: "Active Member",
+  },
+  {
+    amount:15,
+    label: "M+",
+    title: "Users",
   },
 ];
 
