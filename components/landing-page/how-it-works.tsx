@@ -2,7 +2,7 @@ import HowItWorksTiltedCard from "./how-it-work-tiltedcard";
 
 const HowItWorks = () => {
   return (
-    <section className="section-padding min-h-screen bg-gradient-to-tr from-[#FFFFFF] to-[#D8FFD8]">
+    <section className="section-padding overflow-y-auto overflow-x-hidden sm:min-h-screen bg-gradient-to-tr from-[#FFFFFF] to-[#D8FFD8]">
       <div className="container-max mx-auto ">
         <div className="flex justify-center mb-8">
           <div className="text-center max-w-3xl ">

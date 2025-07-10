@@ -4,7 +4,7 @@ import HeroSectionButtton from "./hero-section-button";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen overflow-auto bg-gradient-to-br from-[#C5EAC5] via-[#EBF6EB] to-[#C5EAC5] relative pb-20">
+    <section className="sm:min-h-screen overflow-y-auto overflow-x-hidden bg-gradient-to-br from-[#C5EAC5] via-[#EBF6EB] to-[#C5EAC5] relative pb-20">
       <div className="container-max mx-auto ">
         <h2 className="flex justify-center items-center space-x-2 pt-10">
           <div className="h-6 w-6 sm:h-11 sm:w-11">
