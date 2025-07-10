@@ -40,18 +40,18 @@ const HeroSection = () => {
         </div>
 
         <div className="hidden md:flex mt-16 justify-center items-center">
-          <div className="flex flex-wrap justify-center h-10 max-w-3xl">
-            <div className="flex items-center justify-center gap-2 font-medium text-[26px]">
+          <div className="flex flex-wrap justify-center gap-5 h-10 max-w-3xl font-medium text-[20px] lg:text-[24px]">
+            <div className="flex items-center justify-center gap-2 ">
               <Recycle className="h-6 w-6 text-[#328C48] mr-3" />
               <span className="text-[#328C48]">Zero waste</span>
             </div>
             <div className="h-full mx-4 border-x border-2 !border-[#908C8C]" />
-            <div className="flex items-center justify-center gap-2 font-medium text-[26px]">
+            <div className="flex items-center justify-center gap-2 ">
               <Leaf className="h-6 w-6 text-[#328C48]" />
               <span className="text-[#328C48]">AI Powered</span>
             </div>
             <div className="h-full mx-4 border-x border-2 !border-[#908C8C]" />
-            <div className="flex items-center justify-center gap-2 font-medium text-[26px]">
+            <div className="flex items-center justify-center gap-2 ">
               <Zap className="h-6 w-6 text-[#328C48]" />
               <span className="text-[#328C48]">Real Time Impact</span>
             </div>
