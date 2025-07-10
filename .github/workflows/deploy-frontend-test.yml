@@ -43,6 +43,8 @@ jobs:
           DOCKER_IMAGE_NAME: ${{ env.DOCKER_IMAGE_NAME }}
           DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
           AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
+          AUTH_URL: ${{ secrets.AUTH_URL }}
+          AUTH_TRUST_HOST: ${{ secrets.AUTH_TRUST_HOST }}
           AUTH_GOOGLE_ID: ${{ secrets.AUTH_GOOGLE_ID }}
           AUTH_GOOGLE_SECRET: ${{ secrets.AUTH_GOOGLE_SECRET }}
           AUTH_GITHUB_ID: ${{ secrets.AUTH_GITHUB_ID }}
@@ -51,12 +53,11 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           NODE_ENV: ${{ secrets.NODE_ENV }}
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          AUTH_TRUST_HOST: ${{ secrets.AUTH_TRUST_HOST }}
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ env.EC2_USERNAME }}
           key: ${{ secrets.EC2_KEY }}
-          envs: DOCKER_IMAGE_NAME,DOCKER_HUB_USERNAME,AUTH_SECRET,AUTH_GOOGLE_ID,AUTH_GOOGLE_SECRET,AUTH_GITHUB_ID,AUTH_GITHUB_SECRET,RESEND_VERIFIED_DOMAIN,RESEND_API_KEY,NODE_ENV,DATABASE_URL
+          envs: DOCKER_IMAGE_NAME,DOCKER_HUB_USERNAME,AUTH_SECRET,AUTH_URL,AUTH_TRUST_HOST,AUTH_GOOGLE_ID,AUTH_GOOGLE_SECRET,AUTH_GITHUB_ID,AUTH_GITHUB_SECRET,RESEND_VERIFIED_DOMAIN,RESEND_API_KEY,NODE_ENV,DATABASE_URL
           script: |
             echo "Stopping existing container if running..."
             sudo docker stop $DOCKER_IMAGE_NAME || true
@@ -69,7 +70,20 @@ jobs:
             sudo docker pull $DOCKER_HUB_USERNAME/$DOCKER_IMAGE_NAME:latest
 
             echo "Starting new container..."
-            sudo docker run -d --name $DOCKER_IMAGE_NAME -e AUTH_SECRET=$AUTH_SECRET -e AUTH_TRUST_HOST=$AUTH_TRUST_HOST -e AUTH_GOOGLE_ID=$AUTH_GOOGLE_ID -e AUTH_GOOGLE_SECRET=$AUTH_GOOGLE_SECRET -e AUTH_GITHUB_ID=$AUTH_GITHUB_ID -e AUTH_GITHUB_SECRET=$AUTH_GITHUB_SECRET -e RESEND_VERIFIED_DOMAIN=$RESEND_VERIFIED_DOMAIN -e RESEND_API_KEY=$RESEND_API_KEY -e NODE_ENV=$NODE_ENV -e DATABASE_URL=$DATABASE_URL -p 3000:3000 --restart unless-stopped $DOCKER_HUB_USERNAME/$DOCKER_IMAGE_NAME:latest
+            sudo docker run -d --name $DOCKER_IMAGE_NAME \
+              -e AUTH_SECRET=$AUTH_SECRET \
+              -e AUTH_URL=$AUTH_URL \
+              -e AUTH_TRUST_HOST=$AUTH_TRUST_HOST \
+              -e AUTH_GOOGLE_ID=$AUTH_GOOGLE_ID \
+              -e AUTH_GOOGLE_SECRET=$AUTH_GOOGLE_SECRET \
+              -e AUTH_GITHUB_ID=$AUTH_GITHUB_ID \
+              -e AUTH_GITHUB_SECRET=$AUTH_GITHUB_SECRET \
+              -e RESEND_VERIFIED_DOMAIN=$RESEND_VERIFIED_DOMAIN \
+              -e RESEND_API_KEY=$RESEND_API_KEY \
+              -e NODE_ENV=$NODE_ENV \
+              -e DATABASE_URL=$DATABASE_URL \
+              -p 3000:3000 --restart unless-stopped \
+              $DOCKER_HUB_USERNAME/$DOCKER_IMAGE_NAME:latest
 
             echo "Verifying deployment..."
             sudo docker ps
