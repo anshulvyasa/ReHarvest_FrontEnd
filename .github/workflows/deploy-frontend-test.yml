@@ -45,17 +45,17 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
             echo "Stopping existing container if running..."
-            docker stop ${{ env.DOCKER_IMAGE_NAME }} || true
-            docker rm ${{ env.DOCKER_IMAGE_NAME }} || true
+            sudo docker stop ${{ env.DOCKER_IMAGE_NAME }} || true
+            sudo docker rm ${{ env.DOCKER_IMAGE_NAME }} || true
 
             echo "Removing old Docker image..."
-            docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest || true
+            sudo docker rmi ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest || true
 
             echo "Pulling latest Docker image..."
-            docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest
+            sudo docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest
 
             echo "Starting new container..."
-            docker run -d \
+            sudo docker run -d \
               --name ${{ env.DOCKER_IMAGE_NAME }} \
               -e AUTH_SECRET=${{ secrets.AUTH_SECRET }} \
               -e AUTH_GOOGLE_ID=${{ secrets.AUTH_GOOGLE_ID }} \
@@ -71,6 +71,6 @@ jobs:
               ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest
 
             echo "Verifying deployment..."
-            docker ps
+            sudo docker ps
 
             echo "Deployment successful."
