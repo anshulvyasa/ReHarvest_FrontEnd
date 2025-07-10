@@ -64,8 +64,8 @@ jobs:
               -e AUTH_GITHUB_SECRET=${{ secrets.AUTH_GITHUB_SECRET }} \
               -e RESEND_VERIFIED_DOMAIN=${{ secrets.RESEND_VERIFIED_DOMAIN }} \
               -e RESEND_API_KEY=${{ secrets.RESEND_API_KEY }} \
-              -e NODE_ENV=${{ secrets.NODE_ENV }} \ 
-              -e DATABASE_URL=${{ secrets.DATABASE_URL }}
+              -e NODE_ENV=${{ secrets.NODE_ENV }} \
+              -e DATABASE_URL=${{ secrets.DATABASE_URL }} \
               -p 3000:3000 \
               --restart unless-stopped \
               ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest
