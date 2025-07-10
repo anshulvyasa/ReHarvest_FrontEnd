@@ -17,7 +17,7 @@ const LayoutProvider = ({ children }: { children: React.ReactNode }) => {
       <main
         className="transition-all duration-300 ease-in-out min-h-screen"
         style={{
-          marginLeft: !isMobile && isSidebarOpen ? "280px" : "0px",
+          marginLeft: isMobile ? "0px" : isSidebarOpen ? "280px" : "0px",
         }}
       >
         {children}
