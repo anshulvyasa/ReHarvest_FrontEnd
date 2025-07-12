@@ -1,8 +1,19 @@
 import { Variants } from "framer-motion";
-import { Brain, ChartLine, Leaf, Recycle, Star, Users } from "lucide-react";
+import {
+  Brain,
+  ChartLine,
+  Leaf,
+  Recycle,
+  Star,
+  TypeIcon,
+  Users,
+} from "lucide-react";
+import { IconType } from "react-icons";
 import { CiMail } from "react-icons/ci";
 import { FiTarget, FiUser } from "react-icons/fi";
 import { IoLockClosedOutline } from "react-icons/io5";
+import { PiRecycle } from "react-icons/pi";
+import { PiTShirtLight } from "react-icons/pi";
 
 export const howItWorks = [
   {
@@ -455,6 +466,165 @@ export const redeemRewardsData = [
     title: "Redeem Rewards",
     points: 1000,
     status: "locked",
+  },
+];
+export interface Product {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  type: 'recycle' | 'non-edible' | 'edible' | 'all';
+  typeIcon: IconType;
+  star: number;
+  price: number;
+  greenPoint: number;
+  addToCart: number;
+}
+export const product:Product[] = [
+  {
+    id:"upcycled-cotton-hoodie",
+    title: "Upcycled Cotton Hoodie",
+    description:
+      "Made from recycled cotton, soft and warm, minor color variations",
+    imageUrl: "/Upcycled-Cotton-Hoodie.jpeg",
+    type: "recycle",
+    typeIcon: PiRecycle,
+    star: 4,
+    price: 79,
+    greenPoint: 90,
+    addToCart: 0,
+  },
+  {
+    id:"eco-friendly-canvas-bag",
+    title: "Eco-Friendly Canvas Bag",
+    description: "Durable bag from recycled materials, water-resistant",
+    imageUrl: "/Eco-Friendly-Canvas-Bag.jpeg",
+    type: "recycle",
+    typeIcon: PiRecycle,
+    star: 5,
+    price: 45,
+    greenPoint: 60,
+    addToCart: 0,
+  },
+  {
+    id:"organic-bamboo-socks",
+    title: "Organic Bamboo Socks",
+    description: "Soft and breathable, made from organic bamboo fibers",
+    imageUrl: "/Organic-Bamboo-Socks.jpeg",
+    type: "non-edible",
+    typeIcon: PiTShirtLight,
+    star: 4,
+    price: 15,
+    greenPoint: 30,
+    addToCart: 0,
+  },
+  {
+    id:"recycled-polyester-jacket",
+    title: "Recycled Polyester Jacket",
+    description: "Lightweight and weather-resistant, minor color variations",
+    imageUrl: "/Recycled-Polyester-Jacket.jpeg",
+    type: "recycle",
+    typeIcon: PiRecycle,
+    star: 5,
+    price: 99,
+    greenPoint: 120,
+    addToCart: 0,
+  },
+  {
+    id:"upcycled-denim-jeans",
+    title: "Upcycled Denim Jeans",
+    description: "Stylish jeans from recycled denim, unique patterns",
+    imageUrl: "/Upcycled-Denim-Jeans.jpeg",
+    type: "recycle",
+    typeIcon: PiRecycle,
+    star: 4,
+    price: 65,
+    greenPoint: 80,
+    addToCart: 0,
+  },
+  {
+    id:"hemp-tote-bag",
+    title: "Hemp Tote Bag",
+    description: "Eco-friendly tote, strong and reusable",
+    imageUrl: "/Hemp-Tote-Bag.jpeg",
+    type: "non-edible",
+    typeIcon: PiTShirtLight,
+    star: 5,
+    price: 35,
+    greenPoint: 50,
+    addToCart: 0,
+  },
+  {
+    id:"recycle-wool-scarf",
+    title: "Recycled Wool Scarf",
+    description: "Warm scarf from recycled wool, soft texture",
+    imageUrl: "/Recycled-Wool-Scarf.jpeg",
+    type: "recycle",
+    typeIcon: PiRecycle,
+    star: 4,
+    price: 40,
+    greenPoint: 55,
+    addToCart: 0,
+  },
+  {
+    id:"organic-cotton-cap",
+    title: "Organic Cotton Cap",
+    description: "Breathable cap, made from organic cotton",
+    imageUrl: "/Organic-Cotton-Cap.jpeg",
+    type: "non-edible",
+    typeIcon: PiTShirtLight,
+    star: 5,
+    price: 25,
+    greenPoint: 40,
+    addToCart: 0,
+  },
+  {
+    id:"upcycled-leather-belt",
+    title: "Upcycled Leather Belt",
+    description: "Durable belt from recycled leather, unique design",
+    imageUrl: "/Upcycled-Leather-Belt.jpeg",
+    type: "recycle",
+    typeIcon: PiRecycle,
+    star: 4,
+    price: 50,
+    greenPoint: 70,
+    addToCart: 0,
+  },
+  {
+    id:"bamboo-fiber-towel",
+    title: "Bamboo Fiber Towel",
+    description: "Soft and absorbent, eco-friendly towel",
+    imageUrl: "/Bamboo-Fiber-Towel.jpg",
+    type: "non-edible",
+    typeIcon: PiTShirtLight,
+    star: 5,
+    price: 20,
+    greenPoint: 35,
+    addToCart: 0,
+  },
+  {
+    id:"recycled-pet-backpack",
+    title: "Recycled PET Backpack",
+    description: "Sturdy backpack from recycled plastic bottles",
+    imageUrl: "/Recycled-PET-Backpack.jpg",
+    type: "recycle",
+    typeIcon: PiRecycle,
+    star: 4,
+    price: 85,
+    greenPoint: 100,
+    addToCart: 0,
+  },
+  {
+    id:"organic-linen-shirt",
+    title: "Organic Linen Shirt",
+    description: "Lightweight shirt from organic linen fibers",
+    imageUrl: "/Organic-Linen-Shirt.jpg",
+    type: "non-edible",
+    typeIcon: PiTShirtLight,
+    star: 5,
+    price: 70,
+    greenPoint: 85,
+    addToCart: 0,
   },
 ];
 

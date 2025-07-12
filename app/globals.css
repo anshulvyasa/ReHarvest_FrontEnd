@@ -7,6 +7,9 @@
   --breakpoint-postm-1: 350px;
   --breakpoint-postm-2: 483px;
   --breakpoint-postm-1_5: 370px;
+  --breakpoint-postm-3: 520px;
+  --breakpoint-tabbar-1: 480px;
+  --breakpoint-product-1: 1100px;
 }
 
 @theme inline {
