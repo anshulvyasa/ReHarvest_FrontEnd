@@ -15,7 +15,7 @@ const ListProduct = ({ selectedtab }: { selectedtab: string }) => {
   const isLargeScreen = useMediaQuery("(min-width: 1210px)");
   const [products, setProducts] = useState(product);
   const dispatch = useAppDispatch();
-  const cart = useAppSelector((state) => state.cart);
+
 
   const productquantityIncrease = (id: string) => {
     setProducts((prev) =>

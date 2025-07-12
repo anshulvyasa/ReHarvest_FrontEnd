@@ -21,8 +21,6 @@ const options = [
 ];
 
 const MarketPlaceTabBar = ({ state, setState }: MarketPlaceTabBarProps) => {
-  const getLabelFromValue = (value: string) =>
-    options.find((opt) => opt.value === value)?.label || "All";
 
   return (
     <div className="bg-[#E1DFDF] rounded-2xl w-full flex justify-between px-3 py-2 border">
