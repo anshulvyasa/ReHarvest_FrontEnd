@@ -1,4 +1,10 @@
+import CartHeader from "@/components/business-logic/cart/cart-header";
+
 const Cart = () => {
-  return <div>This is Cart</div>;
+  return (
+    <section className="">
+      <CartHeader />
+    </section>
+  );
 };
 export default Cart;

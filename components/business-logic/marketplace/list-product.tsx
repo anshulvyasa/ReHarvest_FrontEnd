@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card";
 import { Product, product } from "@/config";
-import { useAppDispatch, useAppSelector } from "@/lib/redux/hook";
+import { useAppDispatch } from "@/lib/redux/hook";
 import { Minus, Plus, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
