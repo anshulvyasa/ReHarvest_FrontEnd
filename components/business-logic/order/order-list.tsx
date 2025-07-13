@@ -1,6 +1,8 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
+import { Cart } from "@/lib/redux/features/cart/cart-slice";
+import { Order } from "@/lib/redux/features/order/order-slice";
 import { useAppSelector } from "@/lib/redux/hook";
 import Image from "next/image";
 
@@ -25,7 +27,7 @@ const OrderList = () => {
 
   return (
     <div className="space-y-4">
-      {orders.map((order: any) => (
+      {orders.map((order: Order) => (
         <Card
           key={order.orderId}
           className="bg-white border-none px-5 pt-3 pb-6 flex flex-col md:flex-row gap-4 shadow-2xl rounded-lg"
@@ -68,7 +70,7 @@ const OrderList = () => {
               {formatDate(order.orderDate)}
             </p>
 
-            {order.products.map((item: any, index: number) => (
+            {order.products.map((item: Cart, index: number) => (
               <div
                 key={index}
                 className="flex justify-between items-center py-4"
@@ -97,7 +99,7 @@ const OrderList = () => {
               $
               {order.products
                 .reduce(
-                  (total: number, item: any) =>
+                  (total: number, item: Cart) =>
                     total + item.addToCart * item.price,
                   0
                 )
