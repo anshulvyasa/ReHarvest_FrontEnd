@@ -1,4 +1,0 @@
-interface Order{
-    orderId:string;
-    
-}
