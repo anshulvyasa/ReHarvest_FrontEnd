@@ -1,6 +1,5 @@
 "use client";
 
-import { UploadCloud } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import React from "react";
 import { MdFileUpload } from "react-icons/md";

@@ -1,7 +1,7 @@
 "use client";
 
-import AiClassifierContent from "@/components/business-logic/ai classifier/ai-classifier-content";
-import AiClassifierHeader from "@/components/business-logic/ai classifier/ai-classifier-header";
+import AiClassifierContent from "@/components/business-logic/ai-classifier/ai-classifier-content";
+import AiClassifierHeader from "@/components/business-logic/ai-classifier/ai-classifier-header";
 import { useState } from "react";
 
 export interface AiClassifierFormDataProps {
