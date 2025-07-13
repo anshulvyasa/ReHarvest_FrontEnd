@@ -8,7 +8,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { toast } from "sonner";
 import { useMediaQuery } from "usehooks-ts";
-import { nanoid } from "nanoid";
 import { addToCartFn } from "@/lib/redux/features/cart/cart-slice";
 
 const ListProduct = ({ selectedtab }: { selectedtab: string }) => {

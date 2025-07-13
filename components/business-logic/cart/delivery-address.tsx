@@ -71,7 +71,7 @@ const DeliveryAddressForm = ({
         <div className="text-[#8B8B8B] font-[500] text-[12px] postm-2:text-[13px] mt-4 postm-2:mt-6">
           <p>• Free delivery for orders above $100</p>
           <p>• Expected delivery: 2-4 business days</p>
-          <p>• We'll send you tracking information via email/SMS</p>
+          <p>• We&apos;ll send you tracking information via email/SMS</p>
         </div>
       </div>
 
