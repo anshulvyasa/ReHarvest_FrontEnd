@@ -3,8 +3,13 @@
 import InputBox from "@/components/general/input";
 import { Button } from "@/components/ui/button";
 import { delivery_form_data } from "@/config";
+import { clearCart } from "@/lib/redux/features/cart/cart-slice";
+import { addOrder } from "@/lib/redux/features/order/order-slice";
+import { useAppDispatch, useAppSelector } from "@/lib/redux/hook";
 import { Truck } from "lucide-react";
+import { nanoid } from "nanoid";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 interface Delivery_FormData {
@@ -22,6 +27,9 @@ const DeliveryAddressForm = ({
   setIsDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const session = useSession();
+  const cart = useAppSelector((state) => state.cart);
+  const dispatcher = useAppDispatch();
+  const router = useRouter();
 
   const [formData, setFormData] = useState<Delivery_FormData>({
     name: session.data?.user?.name as string,
@@ -33,10 +41,20 @@ const DeliveryAddressForm = ({
   });
 
   const handleDeliveryFormSubmit = (event: React.FormEvent) => {
-    event.preventDefault(); // ⛔ prevent page reload
-    console.log("form Data : ", formData);
+    event.preventDefault();
+    const orderId = nanoid();
+    const date = new Date();
+    dispatcher(
+      addOrder({
+        orderId: orderId,
+        orderDate: date.toISOString(),
+        status: "In Transit",
+        products: cart,
+      })
+    );
 
-    
+    dispatcher(clearCart());
+
     setFormData({
       name: session.data?.user?.name as string,
       email: session.data?.user?.email as string,
@@ -46,6 +64,7 @@ const DeliveryAddressForm = ({
       city: "",
     });
     setIsDialogOpen(false);
+    router.push("/app/marketplace/order");
   };
 
   return (
@@ -77,7 +96,7 @@ const DeliveryAddressForm = ({
 
       <Button
         type="submit"
-        className="bg-[#62AA67] rounded-xl text-center w-full text-white font-[700] mt-2"
+        className="bg-[#62AA67] hover:text-green-700 cursor-pointer rounded-xl text-center w-full text-white font-[700] mt-2"
       >
         Submit To Place Order
       </Button>

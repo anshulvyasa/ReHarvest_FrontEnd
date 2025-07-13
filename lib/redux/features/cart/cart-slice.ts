@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface Cart {
+export interface Cart {
   id: string;
   title: string;
   description: string;
@@ -52,5 +52,6 @@ export const {
   removefromCartFn,
   increaseQuantityInCart,
   decreaseQuantityInCart,
+  clearCart
 } = cartSlice.actions;
 export default cartSlice.reducer;
