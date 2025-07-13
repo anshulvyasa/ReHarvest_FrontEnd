@@ -9,11 +9,15 @@ import {
   Users,
 } from "lucide-react";
 import { IconType } from "react-icons";
+import { BiSolidCity } from "react-icons/bi";
 import { CiMail } from "react-icons/ci";
 import { FiTarget, FiUser } from "react-icons/fi";
 import { IoLockClosedOutline } from "react-icons/io5";
 import { PiRecycle } from "react-icons/pi";
 import { PiTShirtLight } from "react-icons/pi";
+import { MdOutlineEditLocationAlt } from "react-icons/md";
+import { IoMdPhonePortrait } from "react-icons/io";
+import { TbMapPinSearch } from "react-icons/tb";
 
 export const howItWorks = [
   {
@@ -200,6 +204,57 @@ export const Signin_Form_Data = [
     type: "password",
     placeholder: "Enter Your Password",
     icon: IoLockClosedOutline,
+  },
+];
+
+export const delivery_form_data = [
+  {
+    id: "name",
+    label: "Full Name",
+    placeholder: "Enter Your Full Name",
+    type: "text",
+    icon: FiUser,
+    isdiabled: true,
+  },
+  {
+    id: "email",
+    label: "Email",
+    placeholder: "example@gmail.com",
+    type: "email",
+    icon: CiMail,
+    isdiabled: true,
+  },
+  {
+    id: "phone_number",
+    label: "Phone nummber",
+    placeholder: "+91 00000 00000",
+    type: "text",
+    icon: IoMdPhonePortrait,
+    isdiabled: false,
+  },
+  {
+    id: "pincode",
+    label: "Pincode",
+    placeholder: "000000",
+    type: "text",
+    icon: TbMapPinSearch,
+    isdiabled: false,
+  },
+  {
+    id: "delivery_address",
+    label: "Delivery Address",
+    placeholder: "House No, Street, Area",
+    type: "text",
+    icon: MdOutlineEditLocationAlt,
+    isdiabled: false,
+  },
+  {
+    id: "city",
+    label: "City",
+    placeholder: "Your city",
+    type: "text",
+    icon: BiSolidCity,
+    isdiabled: false,
   },
 ];
 
@@ -473,16 +528,16 @@ export interface Product {
   title: string;
   description: string;
   imageUrl: string;
-  type: 'recycle' | 'non-edible' | 'edible' | 'all';
+  type: "recycle" | "non-edible" | "edible" | "all";
   typeIcon: IconType;
   star: number;
   price: number;
   greenPoint: number;
   addToCart: number;
 }
-export const product:Product[] = [
+export const product: Product[] = [
   {
-    id:"upcycled-cotton-hoodie",
+    id: "upcycled-cotton-hoodie",
     title: "Upcycled Cotton Hoodie",
     description:
       "Made from recycled cotton, soft and warm, minor color variations",
@@ -495,7 +550,7 @@ export const product:Product[] = [
     addToCart: 0,
   },
   {
-    id:"eco-friendly-canvas-bag",
+    id: "eco-friendly-canvas-bag",
     title: "Eco-Friendly Canvas Bag",
     description: "Durable bag from recycled materials, water-resistant",
     imageUrl: "/Eco-Friendly-Canvas-Bag.jpeg",
@@ -507,7 +562,7 @@ export const product:Product[] = [
     addToCart: 0,
   },
   {
-    id:"organic-bamboo-socks",
+    id: "organic-bamboo-socks",
     title: "Organic Bamboo Socks",
     description: "Soft and breathable, made from organic bamboo fibers",
     imageUrl: "/Organic-Bamboo-Socks.jpeg",
@@ -519,7 +574,7 @@ export const product:Product[] = [
     addToCart: 0,
   },
   {
-    id:"recycled-polyester-jacket",
+    id: "recycled-polyester-jacket",
     title: "Recycled Polyester Jacket",
     description: "Lightweight and weather-resistant, minor color variations",
     imageUrl: "/Recycled-Polyester-Jacket.jpeg",
@@ -531,7 +586,7 @@ export const product:Product[] = [
     addToCart: 0,
   },
   {
-    id:"upcycled-denim-jeans",
+    id: "upcycled-denim-jeans",
     title: "Upcycled Denim Jeans",
     description: "Stylish jeans from recycled denim, unique patterns",
     imageUrl: "/Upcycled-Denim-Jeans.jpeg",
@@ -543,7 +598,7 @@ export const product:Product[] = [
     addToCart: 0,
   },
   {
-    id:"hemp-tote-bag",
+    id: "hemp-tote-bag",
     title: "Hemp Tote Bag",
     description: "Eco-friendly tote, strong and reusable",
     imageUrl: "/Hemp-Tote-Bag.jpeg",
@@ -555,7 +610,7 @@ export const product:Product[] = [
     addToCart: 0,
   },
   {
-    id:"recycle-wool-scarf",
+    id: "recycle-wool-scarf",
     title: "Recycled Wool Scarf",
     description: "Warm scarf from recycled wool, soft texture",
     imageUrl: "/Recycled-Wool-Scarf.jpeg",
@@ -567,7 +622,7 @@ export const product:Product[] = [
     addToCart: 0,
   },
   {
-    id:"organic-cotton-cap",
+    id: "organic-cotton-cap",
     title: "Organic Cotton Cap",
     description: "Breathable cap, made from organic cotton",
     imageUrl: "/Organic-Cotton-Cap.jpeg",
@@ -579,7 +634,7 @@ export const product:Product[] = [
     addToCart: 0,
   },
   {
-    id:"upcycled-leather-belt",
+    id: "upcycled-leather-belt",
     title: "Upcycled Leather Belt",
     description: "Durable belt from recycled leather, unique design",
     imageUrl: "/Upcycled-Leather-Belt.jpeg",
@@ -591,7 +646,7 @@ export const product:Product[] = [
     addToCart: 0,
   },
   {
-    id:"bamboo-fiber-towel",
+    id: "bamboo-fiber-towel",
     title: "Bamboo Fiber Towel",
     description: "Soft and absorbent, eco-friendly towel",
     imageUrl: "/Bamboo-Fiber-Towel.jpg",
@@ -603,7 +658,7 @@ export const product:Product[] = [
     addToCart: 0,
   },
   {
-    id:"recycled-pet-backpack",
+    id: "recycled-pet-backpack",
     title: "Recycled PET Backpack",
     description: "Sturdy backpack from recycled plastic bottles",
     imageUrl: "/Recycled-PET-Backpack.jpg",
@@ -615,7 +670,7 @@ export const product:Product[] = [
     addToCart: 0,
   },
   {
-    id:"organic-linen-shirt",
+    id: "organic-linen-shirt",
     title: "Organic Linen Shirt",
     description: "Lightweight shirt from organic linen fibers",
     imageUrl: "/Organic-Linen-Shirt.jpg",

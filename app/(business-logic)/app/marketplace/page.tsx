@@ -44,7 +44,7 @@ const MarketPlace = () => {
 
       {/* Cart  */}
       <div
-        className="fixed right-2 top-[90vh] lg:top-[85vh] lg:right-10 px-3 py-3  rounded-full bg-[#78BE7D]"
+        className="fixed right-2 top-[90vh] lg:top-[85vh] lg:right-10 px-3 py-3  rounded-full bg-[#78BE7D] cursor-pointer hover:bg-green-600"
         onClick={() => router.push("/app/marketplace/cart")}
       >
         <ShoppingCart className=" h-5 w-5  lg:h-7 lg:w-7" />

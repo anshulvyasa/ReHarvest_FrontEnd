@@ -10,6 +10,7 @@ interface InputProps {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   state: string;
   setState: React.Dispatch<React.SetStateAction<string>>;
+  isdiabled?: boolean;
 }
 
 const InputBox = (props: InputProps) => {
@@ -29,6 +30,7 @@ const InputBox = (props: InputProps) => {
           value={props.state}
           className="text-gray-600 w-full rounded-md py-2 pl-10 pr-3 border-2 !border-gray-300 focus:!border-green-700  focus:outline-none"
           onChange={(e) => props.setState(e.target.value)}
+          disabled={props.isdiabled ? true : false}
           required
         />
 

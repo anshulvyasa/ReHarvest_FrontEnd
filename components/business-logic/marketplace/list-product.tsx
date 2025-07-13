@@ -16,7 +16,6 @@ const ListProduct = ({ selectedtab }: { selectedtab: string }) => {
   const [products, setProducts] = useState(product);
   const dispatch = useAppDispatch();
 
-
   const productquantityIncrease = (id: string) => {
     setProducts((prev) =>
       prev.map((item) =>
@@ -48,10 +47,8 @@ const ListProduct = ({ selectedtab }: { selectedtab: string }) => {
       return;
     }
 
-    const orderId = nanoid();
     dispatch(
       addToCartFn({
-        orderId: orderId,
         id: item.id,
         title: item.title,
         description: item.description,
@@ -83,7 +80,7 @@ const ListProduct = ({ selectedtab }: { selectedtab: string }) => {
       {products.map((content, index) => (
         <Card
           key={index}
-          className={`border-none shadow-2xl p-2 flex flex-col bg-white justify-between hover:scale-105 duration-300 transition-all h-full ${
+          className={`border-none shadow-2xl p-2 flex flex-col bg-white justify-between hover:scale-104 duration-300 transition-all h-full ${
             selectedtab === content.type || selectedtab === "all"
               ? ""
               : "hidden"
