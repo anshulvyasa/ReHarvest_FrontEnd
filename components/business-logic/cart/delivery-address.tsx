@@ -64,7 +64,7 @@ const DeliveryAddressForm = ({
       city: "",
     });
     setIsDialogOpen(false);
-    router.push("/app/marketplace/order");
+    router.push("/app/order");
   };
 
   return (

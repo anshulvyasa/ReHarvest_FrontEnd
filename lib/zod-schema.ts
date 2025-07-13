@@ -17,3 +17,9 @@ export const signup_schema = z
     message: "Password Don't Match",
     path: ["confirmPassword"],
   });
+
+// export const ai_analysis_data = z.object({
+//   condition_score: z.number(),
+//   green_points: z.number(),
+//   output: z.number(),
+// });

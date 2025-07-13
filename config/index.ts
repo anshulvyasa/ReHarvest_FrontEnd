@@ -260,10 +260,10 @@ export const delivery_form_data = [
 
 export const SideBarContentData = [
   {
-    id: "home",
-    title: "Home",
-    href: "/app/home",
-    src: "/sidebarhomeicon.png",
+    id: "order",
+    title: "Order",
+    href: "/app/order",
+    src: "/sidebar-order.png",
   },
   {
     id: "dashboard",
@@ -279,9 +279,9 @@ export const SideBarContentData = [
   },
   {
     id: "donateitem",
-    title: "Donate Items",
-    href: "/app/donate-item",
-    src: "/sidebardonateitemicon.png",
+    title: "Ai classifier",
+    href: "/app/ai-classifier",
+    src: "/aiclassifier.png",
   },
 ];
 
@@ -682,6 +682,21 @@ export const product: Product[] = [
     addToCart: 0,
   },
 ];
+
+export const ai_classifier_item_category = [
+  "Blenders/Mixers",
+  "Electric Kettles",
+  "Chairs",
+  "Bags",
+  "Water Purifier",
+  "Lamps",
+  "Calculators",
+  "Plastic Toys",
+  "Shoes",
+  "Headphones",
+];
+
+export const ai_classifier_item_condition = ["Working", "Repairable", "Dead"];
 
 export const containerVariants: Variants = {
   hidden: { opacity: 0, y: 30 },

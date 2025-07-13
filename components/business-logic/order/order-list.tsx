@@ -5,6 +5,7 @@ import { Cart } from "@/lib/redux/features/cart/cart-slice";
 import { Order } from "@/lib/redux/features/order/order-slice";
 import { useAppSelector } from "@/lib/redux/hook";
 import Image from "next/image";
+import { TbRotateClockwise } from "react-icons/tb";
 
 const OrderList = () => {
   const orders = useAppSelector((state) => state.order);
@@ -35,7 +36,7 @@ const OrderList = () => {
           <div className="flex-1">
             <div className="flex justify-between items-center mb-2">
               <div className="flex items-center space-x-3">
-                <span className="font-[600] text-[#353535] text-[14px]">
+                <span className="font-[600] text-[#353535] text-[14px] postm-2:text-[17px] md:text-[19px]">
                   ORD-{order.orderId}
                 </span>
                 {order.status === "Delivered" ? (
@@ -66,7 +67,7 @@ const OrderList = () => {
                 )}
               </div>
             </div>
-            <p className="text-[#707070] font-[500] text-[11px] sm:text-sm text-end">
+            <p className="text-[#707070] font-[500] text-[11px] postm-2:text-[12px]  md:text-sm text-end">
               {formatDate(order.orderDate)}
             </p>
 
@@ -76,17 +77,17 @@ const OrderList = () => {
                 className="flex justify-between items-center py-4"
               >
                 <div className="flex items-center space-x-1 sm:space-x-5">
-                  <h2 className="text-center text-[#1F1F1F] text-[8px] sm:text-[11px] px-3 py-[2px] border !border-[#8E8E8E] rounded-lg ">
+                  <h2 className="text-center text-[#1F1F1F] text-[8px] postm-2:text-[9px] md:text-[11px] px-3 py-[2px] border !border-[#8E8E8E] rounded-lg ">
                     {item.type}
                   </h2>
-                  <h1 className="text-[#353535] font-[600] text-[16px] sm:text-[19px]">
+                  <h1 className="text-[#353535] font-[600] text-[14px] md:text-[17px] lg:text-[19px]">
                     {item.title}
                   </h1>
-                  <p className="text-[#666666]  text-[14px] font-[600] hidden sm:block">
+                  <p className="text-[#666666]  text-[14px]  font-[600] hidden lg:block">
                     x {item.addToCart}
                   </p>
                 </div>
-                <div className="text-[#353535] font-[600] text-[14px] sm:text-[19px] ">
+                <div className="text-[#353535] font-[600] text-[14px] postm-2:text-[15px] md:text-[17px] lg:text-[19px] ">
                   ${(item.addToCart * item.price).toFixed(2)}
                 </div>
               </div>
@@ -95,7 +96,7 @@ const OrderList = () => {
 
           <div className="md:w-1/4 md:border-l border-dotted md:border-gray-200 md:pl-4 flex flex-col items-center justify-center space-y-3">
             <p className="text-[#707070] text-[15px] sm:text-lg">Order Total</p>
-            <h1 className="text-[#353535] font-[600] text-[20px] -mt-3 sm:text-4xl">
+            <h1 className="text-[#353535] font-[600] text-[19px]  postm-[24px] sm:text-[27px] lg:text-4xl -mt-3 ">
               $
               {order.products
                 .reduce(
@@ -105,24 +106,13 @@ const OrderList = () => {
                 )
                 .toFixed(2)}
             </h1>
-            <button className="flex items-center justify-center space-x-2 bg-gray-100 border border-gray-300 text-gray-700 px-4 py-2 rounded-lg w-full">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M4 2a1 1 0 011 1v2.126a8.974 8.974 0 01-1.636 5.161A7.004 7.004 0 0010 17a7.004 7.004 0 006.636-4.713 8.974 8.974 0 01-1.636-5.161V3a1 1 0 112 0v2.126a10.974 10.974 0 002.364 6.365A9.004 9.004 0 0110 19a9.004 9.004 0 01-8.364-12.509A10.974 10.974 0 004 5.126V3a1 1 0 011-1z"
-                  clipRule="evenodd"
-                />
-              </svg>
+            <button className="flex items-center justify-center space-x-2 text-[14px] postm-2:text-[16px] sm:text-[18px] bg-gray-100 border border-gray-300 text-gray-700 px-4 py-2 rounded-lg w-full">
+              <TbRotateClockwise className="h-4 w-4 sm:h-5 sm:w-5 rotate-90" />
               <span>Reorder items</span>
             </button>
-            <button className="bg-[#86EFAC] text-white px-4 py-2 rounded-lg w-full">
-              Rate & Review
-            </button>
+            <button className="bg-[#85D58A] hover:bg-[#7cc781] cursor-pointer text-[14px] postm-2:text-[16px] sm:text-[18px] px-4 py-2 rounded-lg w-full text-[#1F1F1F]">
+              Rate & Review 
+            </button> 
           </div>
         </Card>
       ))}
