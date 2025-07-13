@@ -28,7 +28,7 @@ const AiClasifierImageUpload = ({
         </div>
       </div>
       <div className="border-[2px] !border-[#22782A] border-dashed rounded-lg flex flex-col items-center ">
-        <div className="bg-[#BCE7C0] rounded-lg p-3 sm:p-4 mt-8">
+        <div className="bg-[#BCE7C0] rounded-lg p-3 sm:p-3 mt-8">
           <Image className="text-[#6DBE73] h-6 w-6 sm:h-9 sm:w-9" />
         </div>
         <div className="text-center">
